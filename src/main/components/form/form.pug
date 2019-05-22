@@ -1,0 +1,31 @@
+feedback
+
+        form.feedback-form(novalidate)
+            .form-group
+                label(for="InputName") Your name
+                    span *
+                input.form-control#InputName(type="text" placeholder="Enter name" required)
+                .invalid-feedback Required field
+
+            .form-group
+                label(for="InputEmail") Your email
+                    span *
+                input.form-control#InputEmail(type="email" placeholder="Enter email" required)
+                .invalid-feedback Required field
+                .invalid-email Invalid email format
+
+            .form-group
+                label(for="InputSubject") Subject
+                input.form-control#InputSubject(type="text" placeholder="Enter subject")
+
+            .form-group
+                label(for="InputMessage") Message
+                    span *
+                input.form-control#InputMessage(type="text" placeholder="Enter message" required)
+                .invalid-feedback Required field
+
+            .form-group
+                button.btn.btn-primary(type="submit") Send
+                .success-send Your message was successfully send!
+                .error-send Something went wrong
+
