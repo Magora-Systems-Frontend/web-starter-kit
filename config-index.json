@@ -1,0 +1,72 @@
+{
+  "public": "./public",
+  "isProduction": false,
+  "watch": true,
+  "tasks": {
+    "stylus": {
+      "src": [
+        "./src/**/*.styl"
+      ],
+      "main":["./src/styl/index.styl"],
+      "dst": "css/index.css",
+      "options": {
+        "mapSourceRoot": "./src/styl"
+      }
+    },
+    "pug": {
+      "src": ["./src/main/**/*.pug"],
+      "pages": [
+        "./src/main/index.pug"
+      ],
+      "dst": "public/index.html",
+      "options": {}
+    },
+    "copy": {
+      "img":{
+        "src": [
+          "./src/img/**/*.*"
+        ],
+        "dst": "public/img/"
+      },
+      "fonts":{
+        "src": [
+          "./src/fonts/**/*.*"
+        ],
+        "dst": "public/fonts/"
+      }
+    },
+    "javascript":{
+      "src": [
+        "./src/js/**/*.js"
+      ],
+      "dst": "js/common.js"
+    },
+    "clean": {
+      "src": [
+        "./public/"
+      ]
+    },
+    "build": [
+      "stylus",
+      "pug",
+      "javascript",
+      "copy"
+    ],
+    "rebuild":[
+      "clean",
+      "stylus",
+      "pug",
+      "javascript",
+      "copy"
+    ],
+    "webServer": {
+      "server": {
+        "livereload": true,
+        "host": "localhost",
+        "port": 8085,
+        "open": false,
+        "fallback": "index.html"
+      }
+    }
+  }
+}
