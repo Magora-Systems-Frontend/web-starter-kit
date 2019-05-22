@@ -1,7 +1,6 @@
 public
 .idea
 node_modules
-bower_components
 npm-debug.log
 package-lock.json
 config.json
